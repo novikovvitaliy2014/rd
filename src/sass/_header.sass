@@ -1,0 +1,28 @@
+.header
+  display: flex
+  position: fixed
+  font-family: $font-base
+  top: 0
+  width: 100%
+  height: 50px
+  background-color: $color-main
+  z-index: 2
+.header__top
+  display: flex
+  justify-content: space-between
+  color: #fff
+  @include container( $col-11, $col-11, $col-10, 800px )
+  nav
+    width: 180px
+    ul
+      display: flex
+      flex-wrap: nowrap
+      justify-content: space-between
+      align-items: center
+      height: 100%
+      li
+        text-align: center
+        cursor: pointer
+        list-style: none
+        &:hover
+          color: $color-light

@@ -1,0 +1,89 @@
+.courses,
+.users
+  @include container( $col-11, $col-11, $col-10, $max-width: 800px )
+  margin: 80px auto 20px auto
+  z-index: 1
+  h1
+    margin-bottom: 30px
+    color: $color-main
+    text-transform: capitalize
+.course__row,
+.user__row
+  display: flex
+  justify-content: space-between
+  width: 100%
+  border-bottom: 1px dashed $color-main
+  // &--got-donations
+  //   background-color: $color-light
+  //   color: $color-dark
+  // &--need-donations
+  //   background-color: $color-light2
+  //   color: $color-dark2
+  // &--rest-donations
+  //   background-color: $color-light
+  //   color: $color-dark
+.table
+  margin-top: 10px
+.course__cell,
+.user__cell
+  display: flex
+  justify-content: center
+  align-items: center
+  width: $col-3
+  font-size: $font-size-h5
+  height: 50px
+  text-align: center
+  &:first-child
+    width: $col-4
+.course__buttons,
+.user__buttons
+  display: flex
+  flex-wrap: no-wrap
+  justify-content: center
+  width: $col-2
+  @include mobile
+    width: $col-2
+button.v-btn--floating.v-btn--small
+  display: flex
+  align-self: center
+  @include mobile
+    width: 30px
+    height: 30px
+    margin: 3px
+.search
+  margin-bottom: 20px
+.pagination
+  display: flex
+  justify-content: center
+  margin-top: 20px
+.add-button
+  display: flex
+  justify-content: flex-start
+  align-self: center
+  width:
+  margin-left: 0
+  // .v-btn
+  //   width: 100%
+.settings
+  display: flex
+  flex-wrap: no-wrap
+  justify-content: space-between
+.select-pages
+  width: $col-5
+.settings__select
+  width: $col-5
+.dialog
+  flex: 0 1 auto
+.add-slot
+  width: $col-5
+  display: flex
+  justify-content: flex-start
+  flex-wrap: no-wrap
+  cursor: default
+  span
+    display: flex
+    align-self: center
+    margin-left: 5px
+.delete-icon
+  display: flex
+  align-self: center
