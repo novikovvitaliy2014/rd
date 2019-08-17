@@ -1,5 +1,11 @@
 <template>
   <div class="logo">
-    <a class="logo__link" href="#">Test for You</a>
+    <router-link
+      to="/"
+      class="logo__link"
+      tag="a"
+      >
+      Data Visualization
+    </router-link>
   </div>
 </template>

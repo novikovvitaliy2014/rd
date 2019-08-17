@@ -6,15 +6,10 @@
       </router-link>
       <nav>
         <ul>
-          <router-link to="/users"
-             tag="li"
-             >
-          Users
-          </router-link>
           <router-link to="/"
              tag="li"
              >
-          Courses
+          Menu
           </router-link>
         </ul>
       </nav>

@@ -1,12 +1,10 @@
 import Vue from 'vue'
-import Courses from './views/Courses.vue'
-import Users from './views/Users.vue'
+import Data from './views/Data.vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: Courses},
-  { path: '/users', component: Users},
+  { path: '/', component: Data}
 ]
 
 const router = new VueRouter({
