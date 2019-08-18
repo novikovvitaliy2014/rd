@@ -206,12 +206,9 @@ export default {
       }
     },
     sortByYear(){
-      this.sortArrayByYear = []
-      for(let item of this.newDatesArray){
-        if (item.auctiondate.getFullYear() == this.selectedYear) {
-          this.sortArrayByYear.push(item)
-        }
-      }
+      // this.sortArrayByYear = []
+      this.sortArrayByYear = this.newDatesArray.filter(
+        item => item.auctiondate.getFullYear() == this.selectedYear)
     },
     // Array with sum of attractions for each month from selected dates range
     sumAttractionsForMonths () {
@@ -245,6 +242,7 @@ export default {
       for(let item of this.newDatesArray){
         item.repaydate = new Date(item.repaydate)
         let date = item.repaydate
+        // let date = new Date(item.repaydate)
         if (date >= this.range[0] && date <= this.range[1]) {
           this.sortArrayByRange.push(item)
         }
