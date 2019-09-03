@@ -85,6 +85,7 @@
 <script>
 import LineChart from '@/components/charts/LineChart.js'
 import axios from 'axios'
+import staticData from '@/data/nbu.json'
 export default {
   components: {
     LineChart
@@ -166,6 +167,7 @@ export default {
     // newDatesArray was made in created hook by this method from origin JSON for correction dates forms
     transformDateInData(){
       this.newDatesArray = []
+      this.originArray = staticData
       for(let item of this.originArray){
         let monthNumber = item.auctiondate.toString().slice(3, -5)
         let correctMonthNumber = Number(monthNumber) - 1
@@ -311,6 +313,17 @@ export default {
         console.log(e)
       }
     },
+    async changePagination() {
+      try {
+        await this.countPages()
+        await this.pageItems()
+        await this.listPerPage()
+
+        localStorage.setItem('storagePerPage', JSON.stringify(this.perPage))
+      } catch(e) {
+        console.log(e)
+      }
+    },
   },
   created () {
     this.loading = true
@@ -329,19 +342,26 @@ export default {
     if(storagePerPage){
       this.perPage = storagePerPage
     }
-    axios.get('https://bank.gov.ua/NBUStatService/v1/statdirectory/ovdp?json')
-      .then(response => {
-        this.originArray = response.data
-      })
-      .then(() => {
-        this.transformDateInData()
-      })
-      .then(() => {
-        this.fillData()
-        this.updateRepays()
-        this.loading = false
-      })
-      .catch(error => console.log(error))
+    //FOR DATA FROM API
+    // axios.get('https://bank.gov.ua/NBUStatService/v1/statdirectory/ovdp?json')
+    //   .then(response => {
+    //     this.originArray = response.data
+    //   })
+    //   .then(() => {
+    //     this.transformDateInData()
+    //   })
+    //   .then(() => {
+    //     this.fillData()
+    //     this.updateRepays()
+    //     this.loading = false
+    //   })
+    //   .catch(error => console.log(error))
+    this.transformDateInData()
+  },
+  mounted(){
+    this.fillData()
+    this.updateRepays()
+    this.loading = false
   }
 };
 </script>
