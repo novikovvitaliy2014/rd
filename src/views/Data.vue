@@ -2,6 +2,7 @@
   <section class="data">
     <el-progress v-if="loading" :percentage="50" status="success"></el-progress>
     <p class="data__loading" v-if="loading">Loading...</p>
+    <h3>Визуализация данных по размещению облигаций внутреннего государственного займа.</h3>
     <h1>Line-chart</h1>
     <section class="settings">
       <span>Select year</span>

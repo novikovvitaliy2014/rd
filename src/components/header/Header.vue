@@ -4,7 +4,7 @@
       <router-link to="/">
         <logo></logo>
       </router-link>
-      <nav>
+      <!-- <nav>
         <ul>
           <router-link to="/"
              tag="li"
@@ -12,7 +12,7 @@
           Menu
           </router-link>
         </ul>
-      </nav>
+      </nav> -->
     </div>
   </header>
 </template>
